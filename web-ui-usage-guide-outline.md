@@ -133,8 +133,5 @@ List of supported crystal types with their properties and typical use cases.
 ### Phasematching Types Explained
 Detailed explanation of Type 0, Type 1, and Type 2 phasematching configurations.
 
-### Units and Conventions
-Reference for all units used in the application (nanometers, microns, degrees, etc.).
-
 ### Glossary of Terms
 Definitions of quantum optics and SPDC terminology used throughout the application.
