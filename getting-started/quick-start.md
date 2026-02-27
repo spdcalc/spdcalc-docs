@@ -81,7 +81,6 @@ Hover over any empty panel card (you'll see "load plot" appear) and click it.
 A list of available calculation panels will appear. Common starting points include:
 - **JSI Plot** - Visualize the joint spectral intensity of your photon pairs
 - **Phasematching Curves** - See how phasematching varies with wavelength
-- **Info Panel** - View calculated crystal properties and derived parameters
 {% endstep %}
 
 {% step %}
@@ -121,8 +120,8 @@ The toolbar provides application-level controls and preset management.
 **Toolbar elements (left to right):**
 
 1. **Menu icon** (☰) - Toggle the settings drawer open/closed
-2. **SPDCalc logo** - Visual branding (not interactive)
-3. **Preset control** (center) - A dropdown menu for managing saved configurations:
+2. **SPDCalc logo**
+3. **Preset control** (center) - A dropdown menu for managing saved configurations (on the current browser):
    - Select from previously saved presets
    - Create new presets by typing a name
    - See save status indicator (yellow alert icon when you have unsaved changes)
@@ -132,22 +131,3 @@ The toolbar provides application-level controls and preset management.
    - Export Settings - Save configuration as JSON file
    - SPDCalc v1 - Link to the previous version
    - About - Version and credit information
-
-**Working with presets:**
-
-Presets allow you to save and quickly switch between different experimental configurations. The preset control in the toolbar shows which preset (if any) is currently loaded.
-
-- **Creating a preset** - Type a new name in the preset dropdown and click "Create [name]"
-- **Switching presets** - Click the dropdown and select a different preset from the list
-- **Saving changes** - Click the save button (it turns yellow when you have unsaved changes)
-- **Dirty state indicator** - When you modify parameters after loading a preset, the save button will display a yellow alert icon to remind you of unsaved changes
-
-For more details on preset management, see the "Saving, Sharing, and Importing" section.
-
-### Ready to Configure
-
-Now that you understand the interface layout, you're ready to start configuring SPDC parameters and running calculations. The next section, "Configuring SPDC Parameters," will walk you through each settings group in detail.
-
-{% hint style="success" %}
-**Quick tip**: Start by loading the Info Panel to see calculated crystal properties based on the default settings. This is a great way to verify that calculations are working and to understand what information SPDCalc can provide.
-{% endhint %}
