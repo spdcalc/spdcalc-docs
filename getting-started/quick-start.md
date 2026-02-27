@@ -4,7 +4,7 @@ This guide will help you get started with the web interface and understand the k
 
 ## Opening the Application
 
-The [SPDCalc web app](http://app.spdcalc.org) is a web-based application that runs entirely in your browser, requiring no installation or downloads.
+The [SPDCalc web app](https://app.spdcalc.org) is a web-based application that runs entirely in your browser, requiring no installation or downloads.
 
 {% hint style="success" %}
 SPDCalc runs entirely in your browser. Your configurations are saved in the URL, and you can share configurations via URL or export the parameters as JSON files.
@@ -142,7 +142,7 @@ Presets allow you to save and quickly switch between different experimental conf
 - **Saving changes** - Click the save button (it turns yellow when you have unsaved changes)
 - **Dirty state indicator** - When you modify parameters after loading a preset, the save button will display a yellow alert icon to remind you of unsaved changes
 
-For more details on preset management, see the "Managing Presets" section.
+For more details on preset management, see the "Saving, Sharing, and Importing" section.
 
 ### Ready to Configure
 

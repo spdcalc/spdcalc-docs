@@ -27,16 +27,6 @@ SPDCalc is a comprehensive tool for calculating optical properties of spontaneou
 <td>Learn how to configure crystal, pump, and signal settings</td>
 <td><a href="guides/configuring-parameters.md">configuring-parameters.md</a></td>
 </tr>
-<tr>
-<td><strong>Calculation Panels</strong></td>
-<td>Detailed reference for all calculation panels and visualizations</td>
-<td><a href="reference/calculation-panels-reference.md">calculation-panels-reference.md</a></td>
-</tr>
-<tr>
-<td><strong>Best Practices</strong></td>
-<td>Tips for efficient workflows and troubleshooting</td>
-<td><a href="tips/best-practices.md">best-practices.md</a></td>
-</tr>
 </tbody>
 </table>
 
@@ -50,7 +40,6 @@ This documentation covers the SPDCalc web interface, the most common way to use 
 * **Getting Started** - Quick start guide for new users
 * **User Guides** - Comprehensive guides for all features
 * **Reference** - Detailed technical reference for panels and parameters
-* **Tips & Best Practices** - Optimization strategies and troubleshooting
 
 ## Technology
 
