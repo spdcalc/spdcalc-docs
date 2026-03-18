@@ -1,0 +1,52 @@
+# GitHub Action to deploy the app to cloudflare
+name: Deploy
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+    types: ['opened', 'edited', 'synchronize']
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+    inputs:
+      production:
+        description: 'Deploy to production'
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+  deployments: write
+
+# Allow one deployment at a time per branch
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    # dynamically update environment url depending on the branch
+    environment:
+      name: ${{ ((github.event_name == 'push' && github.ref == 'refs/heads/main') || inputs.production) && 'production' || 'preview' }}
+      url: ${{ steps.deploy.outputs.deployment-url }}
+    steps:
+      - name: Deploy
+        id: deploy
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: >-
+            pages deploy dist/ --project-name=spdcalc-docs
+            ${{ ((github.event_name == 'push' && github.ref == 'refs/heads/main') || inputs.production) && '--branch production' || '' }}
+          # Optional: Enable this if you want to have GitHub Deployments triggered
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+      - name: Deployment URL
+        run: echo "Deployed to ${{ steps.deploy.outputs.deployment-url }}"
