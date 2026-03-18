@@ -40,6 +40,7 @@ jobs:
       name: ${{ ((github.event_name == 'push' && github.ref == 'refs/heads/main') || inputs.production) && 'production' || 'preview' }}
       url: ${{ steps.deploy.outputs.deployment-url }}
     steps:
+      - uses: actions/checkout@v4
       - name: Deploy
         id: deploy
         uses: cloudflare/wrangler-action@v3
