@@ -455,7 +455,7 @@ main.hidden {
   padding: 24px 0 0;
   position: absolute;
   top: 0;
-  transition: transform 250ms ease-out;
+  transition: transform 250ms ease;
   width: 300px;
   z-index: 20;
 }
@@ -577,8 +577,8 @@ main.hidden {
   outline: none;
   padding: 0;
   position: absolute;
-  top: calc(var(--navbar-height) + 12px);
-  transition: transform 250ms ease-out;
+  top: 60px;
+  transition: transform 250ms ease;
   width: 32px;
   z-index: 30;
 }
@@ -617,8 +617,8 @@ body.sticky .sidebar-toggle {
   padding-top: 20px;
   position: absolute;
   right: 0;
-  top: var(--navbar-height);
-  transition: left 250ms ease;
+  top: 0;
+  transition: transform 250ms ease;
 }
 
 .markdown-section {
@@ -766,8 +766,7 @@ body.close .app-nav {
   }
 
   .app-nav {
-    left: 0;
-    transition: none;
+    display: none;
   }
 
   .app-nav li ul {
@@ -782,14 +781,14 @@ body.close .app-nav {
 
   .sidebar {
     left: -300px;
-    top: var(--navbar-height);
-    transition: transform 250ms ease-out;
+    top: 0;
+    transition: transform 250ms ease;
   }
 
   .content {
     left: 0;
     max-width: 100vw;
-    padding-top: calc(var(--navbar-height) + 12px);
+    padding-top: 20px;
     position: static;
     transition: transform 250ms ease;
   }
@@ -801,11 +800,12 @@ body.close .app-nav {
 
   .app-nav,
   .github-corner {
-    transition: transform 250ms ease-out;
+    transition: transform 250ms ease;
   }
 
   .sidebar-toggle {
     position: fixed;
+    top: 12px;
     transform: translateX(0px);
   }
 
