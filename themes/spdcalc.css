@@ -1014,6 +1014,10 @@ section.cover blockquote > p > a:hover {
   margin: 1.2em 0;
 }
 
+.markdown-section img {
+  border: 1px solid var(--theme-color);
+}
+
 .markdown-section p,
 .markdown-section ul,
 .markdown-section ol {
