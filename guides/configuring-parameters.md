@@ -75,6 +75,15 @@ The effective nonlinear coefficient characterizes the strength of the second-ord
 
 Default value is 1 pm/V. For accurate calculations, consult your crystal's datasheet for the $d_\text{eff}$ value corresponding to your chosen phasematching configuration and wavelengths.
 
+## Periodic Poling Settings
+
+Periodic poling enables quasi-phasematching (QPM) in crystals where birefringent phasematching is not possible or optimal. This is particularly useful in materials like PPKTP (periodically-poled KTP).
+
+<figure>
+<img src="assets/screenshots/settings/periodic-poling-panel.png" alt="Periodic poling settings panel">
+<figcaption>Quasi-phasematching configuration including poling period and apodization options</figcaption>
+</figure>
+
 ### Periodic Poling Toggle
 
 Enable this option to activate quasi-phasematching through periodic poling. If auto-calculation is enabled for crystal theta, it will be set to $90°$ (normal incidence).
@@ -272,15 +281,6 @@ The idler wavelength is determined by energy conservation from the pump and sign
 **Theta ($\theta$) and Phi ($\phi$)** - Optimum idler emission angles
 
 The angles at which the idler photon is emitted for perfect phasematching. These values are calculated from momentum conservation and crystal properties.
-
-## Periodic Poling Settings
-
-Periodic poling enables quasi-phasematching (QPM) in crystals where birefringent phasematching is not possible or optimal. This is particularly useful in materials like PPKTP (periodically-poled KTP).
-
-<figure>
-<img src="assets/screenshots/settings/periodic-poling-panel.png" alt="Periodic poling settings panel">
-<figcaption>Quasi-phasematching configuration including poling period and apodization options</figcaption>
-</figure>
 
 ## Integration Settings
 

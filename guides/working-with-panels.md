@@ -93,11 +93,6 @@ To disable auto-update for a panel click the "lock" icon.
 
 With auto-update disabled, the panel will not recalculate when parameters change. To update the panel manually, click the refresh icon (circular arrow) in the panel toolbar.
 
-<figure>
-<img src="assets/screenshots/interface/manual-refresh-button.png" alt="Manual refresh button">
-<figcaption>Click the refresh button to manually recalculate when auto-update is disabled</figcaption>
-</figure>
-
 ### Canceling Calculations
 
 If a calculation is taking longer than expected, you can cancel it at any time by clicking the red cancel button that replaces the refresh button.

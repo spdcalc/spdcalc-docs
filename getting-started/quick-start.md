@@ -22,11 +22,6 @@ SPDCalc's interface is organized into three primary areas:
 
 The settings drawer is your primary control center for configuring SPDC parameters. It contains five collapsible sections that organize all the configuration options you'll need.
 
-<figure>
-<img src="assets/screenshots/interface/settings-drawer-expanded.png" alt="Settings drawer showing all five collapsible sections: Crystal, Periodic Poling, Pump, Signal, and Integration">
-<figcaption>The settings drawer organizes parameters into five logical groups</figcaption>
-</figure>
-
 **The five settings sections are:**
 
 1. **Crystal** - Select your crystal type (BBO, KTP, LiNbO₃, etc.), configure phasematching type (Type 0, Type 1, Type 2), set crystal orientation angles (theta/phi), length, and temperature.
