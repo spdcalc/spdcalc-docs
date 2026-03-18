@@ -46,7 +46,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          preCommands: wrangler pages project create ${{ env.PROJECT_NAME }} || true
+          preCommands: wrangler pages project create ${{ env.PROJECT_NAME }} --production-branch=main || true
           command: >-
             pages deploy . --project-name=${{ env.PROJECT_NAME }}
             ${{ ((github.event_name == 'push' && github.ref == 'refs/heads/main') || inputs.production) && '--branch production' || '' }}
