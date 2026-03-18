@@ -4,6 +4,7 @@ SPDCalc is a comprehensive tool for calculating optical properties of spontaneou
 
 ## Quick Links
 
+* [SPDCalc Web App](https://app.spdcalc.org) - Launch the app
 * [Quick Start Guide](getting-started/quick-start.md) — Get started with the SPDCalc web interface
 * [Configuring Parameters](guides/configuring-parameters.md) — Learn how to configure crystal, pump, and signal settings
 
