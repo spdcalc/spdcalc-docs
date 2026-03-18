@@ -85,7 +85,7 @@ For some workflows, automatic recalculation can be disruptive or slow, especiall
 To disable auto-update for a panel click the "lock" icon.
 
 <figure>
-<img src="../.gitbook/assets/screenshots/interface/auto-update-disabled.png" alt="Auto-update disabled showing closed lock icon in yellow">
+<img src="assets/screenshots/interface/auto-update-disabled.png" alt="Auto-update disabled showing closed lock icon in yellow">
 <figcaption>Closed yellow lock icon indicates auto-update is disabled</figcaption>
 </figure>
 
@@ -94,7 +94,7 @@ To disable auto-update for a panel click the "lock" icon.
 With auto-update disabled, the panel will not recalculate when parameters change. To update the panel manually, click the refresh icon (circular arrow) in the panel toolbar.
 
 <figure>
-<img src="../.gitbook/assets/screenshots/interface/manual-refresh-button.png" alt="Manual refresh button">
+<img src="assets/screenshots/interface/manual-refresh-button.png" alt="Manual refresh button">
 <figcaption>Click the refresh button to manually recalculate when auto-update is disabled</figcaption>
 </figure>
 
@@ -102,6 +102,5 @@ With auto-update disabled, the panel will not recalculate when parameters change
 
 If a calculation is taking longer than expected, you can cancel it at any time by clicking the red cancel button that replaces the refresh button.
 
-{% hint style="warning" %}
-Canceling a calculation stops the work in progress but does not preserve partial results. If you cancel, you'll need to recalculate to see updated data.
-{% endhint %}
+> [!WARNING]
+> Canceling a calculation stops the work in progress but does not preserve partial results. If you cancel, you'll need to recalculate to see updated data.

@@ -6,16 +6,15 @@ This guide will help you get started with the web interface and understand the k
 
 The [SPDCalc web app](https://app.spdcalc.org) is a web-based application that runs entirely in your browser, requiring no installation or downloads.
 
-{% hint style="success" %}
-SPDCalc runs entirely in your browser. Your configurations are saved in the URL, and you can share configurations via URL or export the parameters as JSON files.
-{% endhint %}
+> [!TIP]
+> SPDCalc runs entirely in your browser. Your configurations are saved in the URL, and you can share configurations via URL or export the parameters as JSON files.
 
 ## Understanding the Interface
 
 SPDCalc's interface is organized into three primary areas:
 
 <figure>
-<img src=".gitbook/assets/screenshots/interface/main-window-overview.png" alt="SPDCalc main window showing the three-area layout with settings drawer, calculation panels, and toolbar">
+<img src="assets/screenshots/interface/main-window-overview.png" alt="SPDCalc main window showing the three-area layout with settings drawer, calculation panels, and toolbar">
 <figcaption>The SPDCalc interface consists of three main areas: settings drawer (left), calculation panels (center), and toolbar (top)</figcaption>
 </figure>
 
@@ -24,7 +23,7 @@ SPDCalc's interface is organized into three primary areas:
 The settings drawer is your primary control center for configuring SPDC parameters. It contains five collapsible sections that organize all the configuration options you'll need.
 
 <figure>
-<img src=".gitbook/assets/screenshots/interface/settings-drawer-expanded.png" alt="Settings drawer showing all five collapsible sections: Crystal, Periodic Poling, Pump, Signal, and Integration">
+<img src="assets/screenshots/interface/settings-drawer-expanded.png" alt="Settings drawer showing all five collapsible sections: Crystal, Periodic Poling, Pump, Signal, and Integration">
 <figcaption>The settings drawer organizes parameters into five logical groups</figcaption>
 </figure>
 
@@ -44,9 +43,8 @@ The settings drawer is your primary control center for configuring SPDC paramete
 
 You can show or hide the settings drawer by clicking the menu icon (three horizontal lines) in the top-left corner of the toolbar. This gives you more space to view calculation results when you don't need to adjust parameters.
 
-{% hint style="info" %}
-Many parameters have auto-calculation features enabled by default. For example, the crystal theta angle can be automatically calculated based on your wavelength settings and phasematching type. Look for small indicators or buttons next to parameter fields that enable/disable auto-calculation.
-{% endhint %}
+> [!NOTE]
+> Many parameters have auto-calculation features enabled by default. For example, the crystal theta angle can be automatically calculated based on your wavelength settings and phasematching type. Look for small indicators or buttons next to parameter fields that enable/disable auto-calculation.
 
 ### Calculation Panels (Center Area)
 
@@ -64,36 +62,28 @@ The center area is where your calculation results are displayed. This area uses 
 When you first open SPDCalc, you'll see empty placeholder cards with dashed borders in the calculation area. These are panel loaders.
 
 <figure>
-<img src=".gitbook/assets/screenshots/interface/panel-loader-card.png" alt="Empty panel loader card with dashed border and 'load plot' text on hover">
+<img src="assets/screenshots/interface/panel-loader-card.png" alt="Empty panel loader card with dashed border and 'load plot' text on hover">
 <figcaption>Click any panel loader card to see the available calculation types</figcaption>
 </figure>
 
-{% stepper %}
-{% step %}
-#### Click a panel loader
+1. **Click a panel loader**
 
-Hover over any empty panel card (you'll see "load plot" appear) and click it.
-{% endstep %}
+   Hover over any empty panel card (you'll see "load plot" appear) and click it.
 
-{% step %}
-#### Select a panel type
+2. **Select a panel type**
 
-A list of available calculation panels will appear. Common starting points include:
-- **JSI Plot** - Visualize the joint spectral intensity of your photon pairs
-- **Phasematching Curves** - See how phasematching varies with wavelength
-{% endstep %}
+   A list of available calculation panels will appear. Common starting points include:
+   - **JSI Plot** - Visualize the joint spectral intensity of your photon pairs
+   - **Phasematching Curves** - See how phasematching varies with wavelength
 
-{% step %}
-#### Wait for calculation
+3. **Wait for calculation**
 
-The panel will load and automatically perform its first calculation using your current parameter settings. You'll see a progress indicator while the calculation runs.
-{% endstep %}
-{% endstepper %}
+   The panel will load and automatically perform its first calculation using your current parameter settings. You'll see a progress indicator while the calculation runs.
 
 **Panel toolbar controls:**
 
 <figure>
-<img src=".gitbook/assets/screenshots/interface/panel-toolbar-controls.png" alt="Close-up of panel toolbar showing lock icon, refresh button, and close button">
+<img src="assets/screenshots/interface/panel-toolbar-controls.png" alt="Close-up of panel toolbar showing lock icon, refresh button, and close button">
 <figcaption>Each panel has controls for auto-update, manual refresh, and removal</figcaption>
 </figure>
 
@@ -104,16 +94,15 @@ Each calculation panel includes these controls in its title bar:
 - **Cancel button** (appears during calculation) - Stop a running calculation
 - **Close (X) button** - Remove this panel from the grid
 
-{% hint style="warning" %}
-Panels with auto-update locked will show a yellow border to remind you that they won't update automatically. This is useful when you want to freeze one calculation while exploring variations in other panels.
-{% endhint %}
+> [!WARNING]
+> Panels with auto-update locked will show a yellow border to remind you that they won't update automatically. This is useful when you want to freeze one calculation while exploring variations in other panels.
 
 ### Toolbar (Top)
 
 The toolbar provides application-level controls and preset management.
 
 <figure>
-<img src=".gitbook/assets/screenshots/interface/toolbar-overview.png" alt="Application toolbar showing menu button, SPDCalc logo, preset control, and options menu">
+<img src="assets/screenshots/interface/toolbar-overview.png" alt="Application toolbar showing menu button, SPDCalc logo, preset control, and options menu">
 <figcaption>The toolbar contains the menu toggle, preset controls, and application settings</figcaption>
 </figure>
 

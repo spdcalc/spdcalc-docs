@@ -1,34 +1,11 @@
----
-icon: hand-wave
----
-
 # Welcome to SPDCalc Documentation
 
-SPDCalc is a comprehensive tool for calculating optical properties of spontaneous parametric down-conversion (SPDC) crystals used in quantum optics experiments. It provides interactive visualizations, automatic parameter calculations, and multi-core computation to help researchers design and optimize SPDC sources for quantum information applications.
+SPDCalc is a comprehensive tool for calculating optical properties of spontaneous parametric down-conversion (SPDC) crystals used in quantum optics experiments. It provides interactive visualizations, automatic parameter calculations, and multi-core computation to help researchers design and optimize SPDC sources for quantum optics applications.
 
 ## Quick Links
 
-<table data-view="cards">
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th data-hidden data-card-target data-type="content-ref"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Quick Start Guide</strong></td>
-<td>Get started with the SPDCalc web interface</td>
-<td><a href="getting-started/quick-start.md">quick-start.md</a></td>
-</tr>
-<tr>
-<td><strong>Configuring Parameters</strong></td>
-<td>Learn how to configure crystal, pump, and signal settings</td>
-<td><a href="guides/configuring-parameters.md">configuring-parameters.md</a></td>
-</tr>
-</tbody>
-</table>
+* [Quick Start Guide](getting-started/quick-start.md) — Get started with the SPDCalc web interface
+* [Configuring Parameters](guides/configuring-parameters.md) — Learn how to configure crystal, pump, and signal settings
 
 ## About This Documentation
 

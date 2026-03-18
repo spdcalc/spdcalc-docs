@@ -38,7 +38,7 @@ Plots include a **Download Data** button (💾 icon) in the plot toolbar. This e
 Find the plot toolbar at the top-right corner of any panel. The download button appears as a disk/save icon.
 
 <figure>
-<img src="../.gitbook/assets/screenshots/results/export-menu-location.png" alt="Plot toolbar with download button highlighted">
+<img src="assets/screenshots/results/export-menu-location.png" alt="Plot toolbar with download button highlighted">
 <figcaption>Download button location in the plot toolbar</figcaption>
 </figure>
 
@@ -47,10 +47,9 @@ Find the plot toolbar at the top-right corner of any panel. The download button 
 To export a high-resolution image of any plot for presentations or publications use the button with tha camera icon in the toolbar.
 
 <figure>
-<img src="../.gitbook/assets/screenshots/results/plotly-camera-icon.png" alt="Plotly mode bar with camera icon highlighted">
+<img src="assets/screenshots/results/plotly-camera-icon.png" alt="Plotly mode bar with camera icon highlighted">
 <figcaption>Plotly's camera icon exports high-resolution PNG images</figcaption>
 </figure>
 
-{% hint style="info" %}
-The image export captures the plot exactly as displayed on screen. Adjust zoom, pan, and axis ranges before exporting to frame your data perfectly.
-{% endhint %}
+> [!NOTE]
+> The image export captures the plot exactly as displayed on screen. Adjust zoom, pan, and axis ranges before exporting to frame your data perfectly.

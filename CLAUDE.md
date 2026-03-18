@@ -1,223 +1,145 @@
-# GitBook Documentation Guide for SPDCalc
+# Documentation Guide for SPDCalc
 
-This repository contains GitBook documentation for the SPDCalc application. This guide provides information about GitBook-specific features and conventions.
+This repository contains documentation for the SPDCalc Web application.
 
-## Core GitBook Structure
+## Full docsify reference
 
-### SUMMARY.md - Table of Contents
-The `SUMMARY.md` file controls the navigation structure of your GitBook site. It must be kept up-to-date whenever pages are added or reorganized.
+Docsify documentation itself is rendered by docsify. Fetch the following reference when more context is needed: https://docsify.js.org/_sidebar.md
 
-**Structure:**
-```markdown
-# Table of contents
+Treat it like an llms.txt.
 
-* [Welcome](README.md)
+## Dev preview options
 
-## Section Name
-
-* [Page Title](folder/page.md)
-* [Another Page](folder/another-page.md)
+```bash
+# any of these...
+bunx serve
+npx serve
+python3 -m http.server
 ```
 
-### README.md - Home Page
-The `README.md` file serves as the home page of the documentation site. It should provide an overview and navigation to key sections.
+## Sidebar Navigation
 
-### Folder Organization
-- Organize pages into logical folders (e.g., `basics/`, `getting-started/`, `advanced/`)
-- Each page is a separate `.md` file
-- Reference pages in SUMMARY.md using relative paths
+Sidebar content is defined in `_sidebar.md` at the project root. The `loadSidebar: true` option in `index.html` enables it.
 
-## GitBook-Specific Markdown Features
-
-### Frontmatter with Icons
-Add icons to pages using YAML frontmatter at the top of any markdown file:
+**Format:**
 
 ```markdown
----
-icon: hand-wave
----
+- Section Heading
+  - [Page Title](folder/page.md)
+  - [Another Page](folder/another-page.md)
 
-# Page Title
+- Another Section
+  - [Topic](folder/topic.md)
 ```
 
-**Common icons:** `hand-wave`, `bolt`, `markdown`, `hand-pointer`, `image-landscape`, `plug-circle-plus`, `globe-pointer`, `pen-to-square`, `leaf`
+## Callout Boxes
 
-### Hint Blocks
-Use hint blocks to highlight important information:
+Provided by the `docsify-plugin-flexible-alerts` plugin. Uses blockquote syntax with a type tag.
+
+**Syntax:**
 
 ```markdown
-{% hint style="info" %}
-This is an informational hint.
-{% endhint %}
+> [!NOTE]
+> This is a note callout.
+
+> [!TIP]
+> This is a tip callout.
+
+> [!WARNING]
+> This is a warning callout.
+
+> [!DANGER]
+> This is a danger callout.
 ```
 
-**Styles:** `info`, `warning`, `danger`, `success`
+**Available types:** `NOTE`, `TIP`, `WARNING`, `DANGER`
 
-### Tabs
-Create tabbed content for alternative options or multiple code examples:
+You can also add a custom title on the first line:
 
 ```markdown
-{% tabs %}
-{% tab title="First tab" %}
-Content for the first tab goes here. Can include any blocks.
-{% endtab %}
+> [!WARNING]
+> **Heads up**
+> Something important to know before proceeding.
+```
 
-{% tab title="Second tab" %}
+## Tabs
+
+Provided by the `docsify-tabs` plugin. Tabs are delimited by HTML comments and use level-4 bold headings as tab titles.
+
+**Syntax:**
+
+```markdown
+<!-- tabs:start -->
+
+#### **First Tab**
+
+Content for the first tab.
+
+#### **Second Tab**
+
 Content for the second tab.
 
-```javascript
-// Code blocks work in tabs
-console.log("Hello");
-```
-{% endtab %}
-{% endtabs %}
+```python
+# Code blocks work inside tabs
+print("hello")
 ```
 
-### Stepper Blocks
-Create step-by-step guides:
-
-```markdown
-{% stepper %}
-{% step %}
-#### Step 1 Title
-
-Instructions for step 1.
-{% endstep %}
-
-{% step %}
-#### Step 2 Title
-
-Instructions for step 2.
-{% endstep %}
-{% endstepper %}
+<!-- tabs:end -->
 ```
 
-### Expandable Sections
-Use HTML details/summary tags for collapsible content:
+- The comment delimiters `<!-- tabs:start -->` and `<!-- tabs:end -->` mark the tab group.
+- Each `#### **Tab Title**` heading starts a new tab.
+- Any block-level content (text, code, lists, images) is valid inside a tab.
 
-```markdown
-<details>
-<summary>Click to expand</summary>
+## Images with Captions
 
-Hidden content goes here. Great for FAQs and optional details.
-
-</details>
-```
-
-### Embed Blocks
-Embed external content (YouTube, CodePen, etc.):
-
-```markdown
-{% embed url="https://www.youtube.com/watch?v=VIDEO_ID" %}
-```
-
-GitBook supports thousands of embeddable sites via [iframely](https://iframely.com).
-
-### Card Tables
-Create visual card-based layouts using special table attributes:
-
-```markdown
-<table data-view="cards">
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th data-hidden data-card-target data-type="content-ref"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Card Title</strong></td>
-<td>Card description</td>
-<td><a href="link-to-page.md">link-to-page.md</a></td>
-</tr>
-</tbody>
-</table>
-```
-
-**Attributes:**
-- `data-view="cards"` - Display as cards
-- `data-card-size="large"` - Large card size
-- `data-card-target` - Makes column a link target
-- `data-card-cover` - Makes column an image cover
-- `data-hidden` - Hides column in display
-
-### Figures with Captions
-Add images with captions using figure tags:
+Use HTML `<figure>` and `<figcaption>` tags for images that need captions.
 
 ```markdown
 <figure>
-<img src="path/to/image.png" alt="Alt text">
-<figcaption>Caption text goes here</figcaption>
+  <img src="../assets/example.png" alt="Description of the image">
+  <figcaption>Caption text displayed below the image.</figcaption>
 </figure>
 ```
 
-## Standard Markdown Support
+Standard Markdown image syntax (`![alt](path)`) works for images without captions.
 
-GitBook fully supports standard Markdown:
-- Headings: `#`, `##`, `###`
-- Lists: `-` or `*` for bullets, `1.` for numbered
-- Links: `[text](url)`
-- Code blocks: Triple backticks with language
-- Emphasis: `**bold**`, `*italic*`, `~~strikethrough~~`
-- Tables: Standard markdown tables
-- Blockquotes: `>`
+## Internal Links
 
-## Best Practices for SPDCalc Documentation
+**Linking to another page** (path relative to the project root):
 
-### Content Organization
-1. Keep the home page (README.md) concise with clear navigation
-2. Group related topics in folders
-3. Update SUMMARY.md whenever adding/removing pages
-4. Use descriptive file names (e.g., `quick-start-guide.md`)
+```markdown
+[Page Title](folder/page.md)
+```
 
-### Writing Style
-1. Use hint blocks for important notes and warnings
-2. Use tabs for alternative approaches or language-specific examples
-3. Use stepper blocks for sequential tutorials
-4. Add icons to pages to improve visual navigation
-5. Include alt text for all images
-6. Use expandable sections to avoid overwhelming readers
+**Linking to a section on another page:**
 
-### Images and Media
-1. Store images in an `assets/` folder or reference them by URL
-2. Always include alt text for accessibility
-3. Add captions using `<figcaption>` to provide context
-4. Images can be drag-and-dropped in the GitBook editor
+```markdown
+[Section Title](folder/page.md#section-heading)
+```
 
-### Code Examples
-1. Use language-specific code blocks for syntax highlighting
-2. Keep code examples concise and focused
-3. Consider using tabs when showing the same operation in different languages/tools
-4. Include comments in code to explain non-obvious parts
+**Linking to a section on the current page:**
 
-### Internal Links
-- Link to other pages using relative paths: `[Page Title](../folder/page.md)`
-- Link to sections using anchors: `[Section](#section-heading)`
-- Ensure all links in SUMMARY.md point to valid files
+```markdown
+[Section Title](#section-heading)
+```
 
-### Git Sync Considerations
-- GitBook can sync bidirectionally with GitHub/GitLab
-- Keep markdown clean and valid for both GitBook and GitHub rendering
-- Commit changes regularly
-- Use meaningful commit messages for documentation updates
+Anchor slugs are derived from heading text: lowercase, spaces replaced with hyphens, punctuation removed.
 
-## Testing Your Documentation
+## LaTeX math
 
-Before publishing:
-1. Check that all links in SUMMARY.md are valid
-2. Verify all internal links work correctly
-3. Test that images load properly
-4. Review hint blocks render correctly
-5. Ensure code blocks have proper syntax highlighting
+The [docsify-latex](https://scruel.github.io/docsify-latex/#/) plugin provides math rendering via mathjax 3.
 
-## Publishing
+**Block math:**
 
-Documentation can be published from the GitBook interface. Once published, the site will be accessible online to your selected audience.
+```markdown
+$$
+E = mc^2
+$$
+```
 
-## Additional Resources
+**Inline math:**
 
-- Press `/` in the GitBook editor to see available blocks
-- GitBook supports importing existing Markdown files
-- Check [iframely.com](https://iframely.com) for supported embed URLs
-- GitBook integrations can add analytics, support widgets, and more
+```markdown
+$ F = ma $
+```

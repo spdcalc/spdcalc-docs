@@ -9,7 +9,7 @@ This section covers all parameter configuration options and explains how to use 
 Crystal settings define the fundamental properties of your nonlinear crystal and its orientation for phasematching.
 
 <figure>
-<img src="../.gitbook/assets/screenshots/settings/crystal-settings-panel.png" alt="Crystal settings panel">
+<img src="assets/screenshots/settings/crystal-settings-panel.png" alt="Crystal settings panel">
 <figcaption>Crystal configuration controls including type, phasematching, orientation, and physical properties</figcaption>
 </figure>
 
@@ -24,9 +24,8 @@ Select your nonlinear crystal from the dropdown menu. SPDCalc supports a wide ra
 - AgGaS2 (Silver Gallium Sulfide)
 - ... and more!
 
-{% hint style="info" %}
-**NEW:** You can define your own crystal by specifying data points for its effective index of refraction at a series of wavelengths.
-{% endhint %}
+> [!NOTE]
+> **NEW:** You can define your own crystal by specifying data points for its effective index of refraction at a series of wavelengths.
 
 ### Phasematching Type
 
@@ -44,20 +43,17 @@ Choose the phasematching configuration that matches your experimental setup:
 
 This is the angle between the crystal's z axis and the pump beam propagation direction (the lab z axis). Crystal theta is the primary parameter for achieving phasematching without periodic poling.
 
-{% tabs %}
-{% tab title="Auto-Calculate" %}
+<!-- tabs:start -->
+#### **Auto-Calculate**
 When the auto-calculation toggle (magic wand icon) is enabled, SPDCalc automatically calculates the optimal theta angle for phasematching based on your pump and signal wavelengths.
 
 The auto-calculation sets theta to 90° when periodic poling is enabled.
-{% endtab %}
-
-{% tab title="Manual Entry" %}
+#### **Manual Entry**
 Disable auto-calculation to manually specify the crystal angle. This is useful when:
 - You have a fixed crystal mount at a specific angle
 - You want to explore off-phasematched conditions
 - You're studying angle-dependent properties
-{% endtab %}
-{% endtabs %}
+<!-- tabs:end -->
 
 **Phi (ϕ)** - The crystal azimuthal angle in degrees [0°, 360°)
 
@@ -87,15 +83,12 @@ Enable this option to activate quasi-phasematching through periodic poling. If a
 
 The period of the alternating domain structure in micrometers (µm).
 
-{% tabs %}
-{% tab title="Auto-Calculate" %}
+<!-- tabs:start -->
+#### **Auto-Calculate**
 When auto-calculation is enabled (requires periodic poling to be active), SPDCalc computes the required poling period based on your wavelengths, crystal type, and phasematching type.
-{% endtab %}
-
-{% tab title="Manual Entry" %}
+#### **Manual Entry**
 Disable auto-calculation to specify a custom poling period.
-{% endtab %}
-{% endtabs %}
+<!-- tabs:end -->
 
 ### Apodization
 
@@ -120,9 +113,8 @@ Choose from several standard apodization window functions:
 
 For detailed information on apodization functions, see the [MathWorld reference](https://mathworld.wolfram.com/ApodizationFunction.html).
 
-{% hint style="info" %}
-Calculated poling domains can be accessed through the "Info" panel.
-{% endhint %}
+> [!NOTE]
+> Calculated poling domains can be accessed through the "Info" panel.
 
 ### Apodization Parameters
 
@@ -149,7 +141,7 @@ Example: `1.0, 0.9, 0.7, 0.5, 0.7, 0.9, 1.0` creates a dip in the middle of the 
 Pump settings define the properties of the laser used to generate photon pairs through the SPDC process.
 
 <figure>
-<img src="../.gitbook/assets/screenshots/settings/pump-configuration-panel.png" alt="Pump configuration panel">
+<img src="assets/screenshots/settings/pump-configuration-panel.png" alt="Pump configuration panel">
 <figcaption>Pump laser parameters including wavelength, bandwidth, beam profile, and power</figcaption>
 </figure>
 
@@ -161,9 +153,8 @@ The central wavelength of the pump laser in nanometers (nm).
 
 The full-width at half-maximum spectral bandwidth of the pump laser in nanometers (nm).
 
-{% hint style="info" %}
-The pump bandwidth directly impacts the Schmidt number, which quantifies the spectral entanglement of photon pairs. Narrower pump bandwidths typically result in higher Schmidt numbers.
-{% endhint %}
+> [!NOTE]
+> The pump bandwidth directly impacts the Schmidt number, which quantifies the spectral entanglement of photon pairs. Narrower pump bandwidths typically result in higher Schmidt numbers.
 
 ### Waist 1/e²
 
@@ -174,9 +165,8 @@ The pump waist determines:
 - Rayleigh range and focusing conditions
 - Collection efficiency in fiber-coupled systems
 
-{% hint style="warning" %}
-The paraxial approximation used in SPDCalc requires that the waist size be much larger than the wavelength divided by the refractive index. A warning appears if your waist is too small for the approximation to be valid (W << 20λ/n).
-{% endhint %}
+> [!WARNING]
+> The paraxial approximation used in SPDCalc requires that the waist size be much larger than the wavelength divided by the refractive index. A warning appears if your waist is too small for the approximation to be valid (W << 20λ/n).
 
 ### Spectrum Cutoff
 
@@ -188,11 +178,10 @@ Default value: 1e-2 (1%)
 - Higher values (e.g., 2e-1): Faster calculation, may miss weak spectral features
 - Lower values (e.g., 1e-4): More accurate, slower calculation
 
-{% hint style="info" %}
-Setting this to be a larger value can help speed up expensive calculations at the risk of discarding data.
-
-If you're seeing unexpected cutoffs in your JSI plots, try decreasing the spectrum cutoff value to include more of the pump spectral wings.
-{% endhint %}
+> [!NOTE]
+> Setting this to be a larger value can help speed up expensive calculations at the risk of discarding data.
+>
+> If you're seeing unexpected cutoffs in your JSI plots, try decreasing the spectrum cutoff value to include more of the pump spectral wings.
 
 ### Power
 
@@ -201,9 +190,8 @@ The pump laser power in milliwatts (mW). This parameter affects:
 - Brightness estimates for the SPDC source
 - Pair generation rates
 
-{% hint style="warning" %}
-Absolute rate counts have not been vetted against experimental results and should not be trusted. Relative values like efficiency are more reliable.
-{% endhint %}
+> [!WARNING]
+> Absolute rate counts have not been vetted against experimental results and should not be trusted. Relative values like efficiency are more reliable.
 
 ### Refractive Index (np)
 
@@ -214,7 +202,7 @@ This read-only field displays the calculated refractive index of the pump beam i
 Signal settings define the wavelength and spatial mode properties of the signal photon (one of the two photons in the down-converted pair).
 
 <figure>
-<img src="../.gitbook/assets/screenshots/settings/signal-configuration-panel.png" alt="Signal configuration panel">
+<img src="assets/screenshots/settings/signal-configuration-panel.png" alt="Signal configuration panel">
 <figcaption>Signal photon parameters including wavelength, collection angles, and spatial mode configuration</figcaption>
 </figure>
 
@@ -240,13 +228,11 @@ This parameter defines the spatial mode of signal photon collection, typically m
 
 The angle between the signal photon collection direction and the pump beam axis. For collinear SPDC, this is typically 0°.
 
-{% hint style="info" %}
-For counter-propagating setups this may be set to angles near 180° to counter-propagate the signal rather than the idler.
-{% endhint %}
+> [!NOTE]
+> For counter-propagating setups this may be set to angles near 180° to counter-propagate the signal rather than the idler.
 
-{% hint style="warning" %}
-The phasematching algorithms use a small-angle approximation for signal and idler angles. For accurate results, keep signal theta within ±10° of the pump direction.
-{% endhint %}
+> [!WARNING]
+> The phasematching algorithms use a small-angle approximation for signal and idler angles. For accurate results, keep signal theta within ±10° of the pump direction.
 
 **Phi (ϕ)** - Signal azimuthal angle in degrees [0°, 360°]
 
@@ -258,15 +244,12 @@ The azimuthal angle around the pump beam. This field is currently disabled as mo
 
 The z-position of the signal beam waist along the crystal axis, measured from **the end** of the crystal. This parameter enables optimization of spatial mode matching between the pump and collection modes.
 
-{% tabs %}
-{% tab title="Auto-Calculate" %}
+<!-- tabs:start -->
+#### **Auto-Calculate**
 When auto-calculation is enabled (magic wand icon), SPDCalc determines the optimal signal focus position for maximum mode overlap with the SPDC emission.
-{% endtab %}
-
-{% tab title="Manual Entry" %}
+#### **Manual Entry**
 Disable auto-calculation to specify a custom waist position. Values should be negative as they are measured from the end of the crystal (z=0).
-{% endtab %}
-{% endtabs %}
+<!-- tabs:end -->
 
 **Idler Focus** - Idler beam waist position in micrometers (µm)
 
@@ -295,7 +278,7 @@ The angles at which the idler photon is emitted for perfect phasematching. These
 Periodic poling enables quasi-phasematching (QPM) in crystals where birefringent phasematching is not possible or optimal. This is particularly useful in materials like PPKTP (periodically-poled KTP).
 
 <figure>
-<img src="../.gitbook/assets/screenshots/settings/periodic-poling-panel.png" alt="Periodic poling settings panel">
+<img src="assets/screenshots/settings/periodic-poling-panel.png" alt="Periodic poling settings panel">
 <figcaption>Quasi-phasematching configuration including poling period and apodization options</figcaption>
 </figure>
 
@@ -304,7 +287,7 @@ Periodic poling enables quasi-phasematching (QPM) in crystals where birefringent
 Integration settings control the numerical calculation of the joint spectral intensity (JSI) and other integrated quantities. Use these parameters to balance calculation accuracy against computation time.
 
 <figure>
-<img src="../.gitbook/assets/screenshots/settings/integration-settings-panel.png" alt="Integration settings panel">
+<img src="assets/screenshots/settings/integration-settings-panel.png" alt="Integration settings panel">
 <figcaption>Numerical integration method and wavelength range controls</figcaption>
 </figure>
 
@@ -338,9 +321,8 @@ The number of grid points in each dimension for 2D JSI calculations. This parame
 
 This applies to panels that do not have their own "JSI Resolution" setting. Panels that do provide their own resolution setting tend to be those that involve many JSI calculations, such as a Hong-Ou-Mandel Time Series.
 
-{% hint style="warning" %}
-The total number of calculated points is (Grid Size)², so doubling the resolution quadruples the computation time.
-{% endhint %}
+> [!WARNING]
+> The total number of calculated points is (Grid Size)², so doubling the resolution quadruples the computation time.
 
 ### Auto Calculate Integration Limits
 
