@@ -17,11 +17,11 @@ For intensity and amplitude data, the application uses a **gradient from white (
 #### Phase Plots
 
 Phase information uses a **cyclic diverging color scale** that transitions through:
-- Dark gray (−π)
-- Red (−π/2)
-- White (0)
-- Blue (+π/2)
-- Dark gray (+π)
+- Dark gray ($-\pi$)
+- Red ($-\pi/2$)
+- White ($0$)
+- Blue ($+\pi/2$)
+- Dark gray ($+\pi$)
 
 #### Zero Highlighting
 

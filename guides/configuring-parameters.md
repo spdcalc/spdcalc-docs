@@ -39,7 +39,7 @@ Choose the phasematching configuration that matches your experimental setup:
 
 ### Crystal Orientation
 
-**Theta (θ)** - The crystal polar angle in degrees [0°, 180°)
+**Theta ($\theta$)** - The crystal polar angle in degrees $[0°, 180°)$
 
 This is the angle between the crystal's z axis and the pump beam propagation direction (the lab z axis). Crystal theta is the primary parameter for achieving phasematching without periodic poling.
 
@@ -47,7 +47,7 @@ This is the angle between the crystal's z axis and the pump beam propagation dir
 #### **Auto-Calculate**
 When the auto-calculation toggle (magic wand icon) is enabled, SPDCalc automatically calculates the optimal theta angle for phasematching based on your pump and signal wavelengths.
 
-The auto-calculation sets theta to 90° when periodic poling is enabled.
+The auto-calculation sets theta to $90°$ when periodic poling is enabled.
 #### **Manual Entry**
 Disable auto-calculation to manually specify the crystal angle. This is useful when:
 - You have a fixed crystal mount at a specific angle
@@ -55,7 +55,7 @@ Disable auto-calculation to manually specify the crystal angle. This is useful w
 - You're studying angle-dependent properties
 <!-- tabs:end -->
 
-**Phi (ϕ)** - The crystal azimuthal angle in degrees [0°, 360°)
+**Phi ($\phi$)** - The crystal azimuthal angle in degrees $[0°, 360°)$
 
 This parameter defines the azimuthal rotation around the pump beam axis. Phi will affect the orientation of signal/idler emission in non-collinear geometries.
 
@@ -69,15 +69,15 @@ The interaction length of the crystal in micrometers. Longer crystals may increa
 
 Temperature affects the refractive indices of _some_ crystals. The temperature response of some crystals is not known.
 
-**deff** - Effective nonlinear coefficient in pm/V
+**$d_\text{eff}$** - Effective nonlinear coefficient in pm/V
 
 The effective nonlinear coefficient characterizes the strength of the second-order nonlinear interaction. This value depends on both the crystal material and the phasematching type. Currently this must be set manually.
 
-Default value is 1 pm/V. For accurate calculations, consult your crystal's datasheet for the deff value corresponding to your chosen phasematching configuration and wavelengths.
+Default value is 1 pm/V. For accurate calculations, consult your crystal's datasheet for the $d_\text{eff}$ value corresponding to your chosen phasematching configuration and wavelengths.
 
 ### Periodic Poling Toggle
 
-Enable this option to activate quasi-phasematching through periodic poling. If auto-calculation is enabled for crystal theta, it will be set to 90° (normal incidence).
+Enable this option to activate quasi-phasematching through periodic poling. If auto-calculation is enabled for crystal theta, it will be set to $90°$ (normal incidence).
 
 ### Poling Period
 
@@ -158,7 +158,7 @@ The full-width at half-maximum spectral bandwidth of the pump laser in nanometer
 
 ### Waist 1/e²
 
-The beam waist (radius at 1/e² intensity) of the pump beam in micrometers (µm).
+The beam waist (radius at 1/$e^2$ intensity) of the pump beam in micrometers (µm).
 
 The pump waist determines:
 - Spatial mode matching with signal/idler collection modes
@@ -166,7 +166,7 @@ The pump waist determines:
 - Collection efficiency in fiber-coupled systems
 
 > [!WARNING]
-> The paraxial approximation used in SPDCalc requires that the waist size be much larger than the wavelength divided by the refractive index. A warning appears if your waist is too small for the approximation to be valid (W << 20λ/n).
+> The paraxial approximation used in SPDCalc requires that the waist size be much larger than the wavelength divided by the refractive index. A warning appears if your waist is too small for the approximation to be valid ($W \ll 20\lambda/n$).
 
 ### Spectrum Cutoff
 
@@ -193,7 +193,7 @@ The pump laser power in milliwatts (mW). This parameter affects:
 > [!WARNING]
 > Absolute rate counts have not been vetted against experimental results and should not be trusted. Relative values like efficiency are more reliable.
 
-### Refractive Index (np)
+### Refractive Index ($n_p$)
 
 This read-only field displays the calculated refractive index of the pump beam in the crystal.
 
@@ -218,25 +218,25 @@ The signal photon wavelength in nanometers (nm).
 
 ### Waist 1/e²
 
-The signal beam waist (radius at 1/e² intensity) in micrometers (µm).
+The signal beam waist (radius at 1/$e^2$ intensity) in micrometers (µm).
 
 This parameter defines the spatial mode of signal photon collection, typically matching the mode of your single-mode fiber or spatial filter.
 
 ### Collection Angles
 
-**Theta (θ)** - Signal polar angle in degrees [-180°, 180°]
+**Theta ($\theta$)** - Signal polar angle in degrees $[-180°, 180°]$
 
-The angle between the signal photon collection direction and the pump beam axis. For collinear SPDC, this is typically 0°.
+The angle between the signal photon collection direction and the pump beam axis. For collinear SPDC, this is typically $0°$.
 
 > [!NOTE]
-> For counter-propagating setups this may be set to angles near 180° to counter-propagate the signal rather than the idler.
+> For counter-propagating setups this may be set to angles near $180°$ to counter-propagate the signal rather than the idler.
 
 > [!WARNING]
-> The phasematching algorithms use a small-angle approximation for signal and idler angles. For accurate results, keep signal theta within ±10° of the pump direction.
+> The phasematching algorithms use a small-angle approximation for signal and idler angles. For accurate results, keep signal theta within $\pm 10°$ of the pump direction.
 
-**Phi (ϕ)** - Signal azimuthal angle in degrees [0°, 360°]
+**Phi ($\phi$)** - Signal azimuthal angle in degrees $[0°, 360°]$
 
-The azimuthal angle around the pump beam. This field is currently disabled as most calculations assume signal and idler are in the same plane (phi = 0°).
+The azimuthal angle around the pump beam. This field is currently disabled as most calculations assume signal and idler are in the same plane ($\phi = 0°$).
 
 ### Waist Positions
 
@@ -248,7 +248,7 @@ The z-position of the signal beam waist along the crystal axis, measured from **
 #### **Auto-Calculate**
 When auto-calculation is enabled (magic wand icon), SPDCalc determines the optimal signal focus position for maximum mode overlap with the SPDC emission.
 #### **Manual Entry**
-Disable auto-calculation to specify a custom waist position. Values should be negative as they are measured from the end of the crystal (z=0).
+Disable auto-calculation to specify a custom waist position. Values should be negative as they are measured from the end of the crystal ($z = 0$).
 <!-- tabs:end -->
 
 **Idler Focus** - Idler beam waist position in micrometers (µm)
@@ -257,7 +257,7 @@ Similar to signal focus, but for the idler photon. The idler parameters are typi
 
 ### Refractive Indices
 
-**ns** and **ni** - Signal and idler refractive indices (read-only)
+**$n_s$** and **$n_i$** - Signal and idler refractive indices (read-only)
 
 These fields display the calculated refractive indices for signal and idler wavelengths at the current crystal temperature and phasematching configuration.
 
@@ -269,7 +269,7 @@ This section displays the calculated properties of the idler photon at perfect p
 
 The idler wavelength is determined by energy conservation from the pump and signal wavelengths.
 
-**Theta (θ) and Phi (ϕ)** - Optimum idler emission angles
+**Theta ($\theta$) and Phi ($\phi$)** - Optimum idler emission angles
 
 The angles at which the idler photon is emitted for perfect phasematching. These values are calculated from momentum conservation and crystal properties.
 
@@ -322,7 +322,7 @@ The number of grid points in each dimension for 2D JSI calculations. This parame
 This applies to panels that do not have their own "JSI Resolution" setting. Panels that do provide their own resolution setting tend to be those that involve many JSI calculations, such as a Hong-Ou-Mandel Time Series.
 
 > [!WARNING]
-> The total number of calculated points is (Grid Size)², so doubling the resolution quadruples the computation time.
+> The total number of calculated points is $(\text{Grid Size})^2$, so doubling the resolution quadruples the computation time.
 
 ### Auto Calculate Integration Limits
 
