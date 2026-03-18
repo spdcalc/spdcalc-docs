@@ -26,6 +26,9 @@ concurrency:
   group: deploy-${{ github.ref }}
   cancel-in-progress: true
 
+env:
+  PROJECT_NAME: spdcalc-docs
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -43,8 +46,9 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          preCommands: pages project create ${{ env.PROJECT_NAME }} || true
           command: >-
-            pages deploy . --project-name=spdcalc-docs
+            pages deploy . --project-name=${{ env.PROJECT_NAME }}
             ${{ ((github.event_name == 'push' && github.ref == 'refs/heads/main') || inputs.production) && '--branch production' || '' }}
           # Optional: Enable this if you want to have GitHub Deployments triggered
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
