@@ -12,4 +12,10 @@
   - [Working with Results](guides/working-with-results.md)
 
 - **Reference**
-  - [Appendices](reference/appendices.md)
+  - [Crystal Types](reference/crystal-types.md)
+
+- **Links**
+  - [SPDCalc Web App](https://app.spdcalc.org)
+  - [GitHub Project](https://github.com/spdcalc/)
+  - [Rust Lib](https://docs.rs/spdcalc/latest/spdcalc/)
+  - [Python Lib](https://spdcalc-py.readthedocs.io/en/latest/quickstart.html)

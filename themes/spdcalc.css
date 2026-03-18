@@ -105,6 +105,14 @@
   --tip-code-bg:              var(--color-border);
   --warn-bg:                  rgba(26, 188, 156, 0.08);
 
+  /* Top navbar */
+  --navbar-height:            40px;
+  --navbar-bg:                var(--color-midnight-blue);
+  --navbar-text:              var(--color-clouds);
+  --navbar-text-hover:        var(--color-white);
+  --navbar-border:            rgba(255, 255, 255, 0.08);
+  --navbar-link-active-color: var(--theme-color);
+
   /* Cover page */
   --cover-mask-bg:            var(--color-midnight-blue);
 
@@ -279,15 +287,25 @@ li input[type='checkbox'] {
 /* ─── App nav ──────────────────────────────────────────────── */
 
 .app-nav {
-  margin: 25px 60px 0 0;
-  position: absolute;
+  align-items: center;
+  background-color: var(--navbar-bg);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.25);
+  display: flex;
+  height: var(--navbar-height);
+  justify-content: flex-end;
+  left: 300px;
+  margin: 0;
+  padding: 0 24px;
+  position: fixed;
+  transition: left 250ms ease;
   right: 0;
   text-align: right;
-  z-index: 10;
+  top: 0;
+  z-index: 100;
 }
 
 .app-nav.no-badge {
-  margin-right: 25px;
+  padding-right: 24px;
 }
 
 .app-nav p {
@@ -295,38 +313,40 @@ li input[type='checkbox'] {
 }
 
 .app-nav > a {
-  margin: 0 1rem;
-  padding: 5px 0;
+  margin: 0 0.5rem;
+  padding: 0;
 }
 
 .app-nav ul,
 .app-nav li {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   list-style: none;
   margin: 0;
+  height: 100%;
 }
 
 .app-nav a {
-  color: inherit;
-  font-size: 16px;
+  color: var(--navbar-text);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  padding: 0 12px;
   text-decoration: none;
-  transition: color 0.3s;
+  transition: color 0.2s;
 }
 
 .app-nav a:hover {
-  color: var(--theme-color);
+  color: var(--navbar-text-hover);
+  text-decoration: underline;
 }
 
 .app-nav a.active {
-  border-bottom: 2px solid var(--theme-color);
-  color: var(--theme-color);
+  color: var(--navbar-link-active-color);
 }
 
 .app-nav li {
   cursor: pointer;
-  display: inline-block;
-  margin: 0 1rem;
-  padding: 5px 0;
   position: relative;
 }
 
@@ -336,11 +356,11 @@ li input[type='checkbox'] {
   border-radius: 4px;
   box-sizing: border-box;
   display: none;
-  max-height: calc(100vh - 61px);
+  max-height: calc(100vh - var(--navbar-height));
   overflow-y: auto;
-  padding: 10px 0;
+  padding: 6px 0;
   position: absolute;
-  right: -15px;
+  right: 0;
   text-align: left;
   top: 100%;
   white-space: nowrap;
@@ -348,18 +368,21 @@ li input[type='checkbox'] {
 
 .app-nav li ul li {
   display: block;
-  font-size: 14px;
-  line-height: 1rem;
-  margin: 8px 14px;
-  white-space: nowrap;
+  height: auto;
+  margin: 0;
 }
 
 .app-nav li ul a {
+  border-radius: 0;
   color: var(--nav-dropdown-text);
   display: block;
-  font-size: inherit;
-  margin: 0;
-  padding: 0;
+  font-size: 14px;
+  height: auto;
+  padding: 8px 16px;
+}
+
+.app-nav li ul a:hover {
+  background-color: rgba(255, 255, 255, 0.06);
 }
 
 .app-nav li ul a.active {
@@ -429,7 +452,7 @@ main.hidden {
   color: var(--sidebar-text);
   left: 0;
   overflow-y: auto;
-  padding: 40px 0 0;
+  padding: 24px 0 0;
   position: absolute;
   top: 0;
   transition: transform 250ms ease-out;
@@ -554,7 +577,7 @@ main.hidden {
   outline: none;
   padding: 0;
   position: absolute;
-  top: 60px;
+  top: calc(var(--navbar-height) + 12px);
   transition: transform 250ms ease-out;
   width: 32px;
   z-index: 30;
@@ -591,10 +614,10 @@ body.sticky .sidebar-toggle {
 .content {
   bottom: 0;
   left: 300px;
-  padding-top: 60px;
+  padding-top: 20px;
   position: absolute;
   right: 0;
-  top: 0;
+  top: var(--navbar-height);
   transition: left 250ms ease;
 }
 
@@ -718,6 +741,10 @@ body.close .content {
   transform: translateX(-300px);
 }
 
+body.close .app-nav {
+  left: 0;
+}
+
 /* ─── Print ────────────────────────────────────────────────── */
 
 @media print {
@@ -739,11 +766,12 @@ body.close .content {
   }
 
   .app-nav {
-    margin-top: 16px;
+    left: 0;
+    transition: none;
   }
 
   .app-nav li ul {
-    top: 30px;
+    top: 100%;
   }
 
   main {
@@ -754,13 +782,14 @@ body.close .content {
 
   .sidebar {
     left: -300px;
+    top: var(--navbar-height);
     transition: transform 250ms ease-out;
   }
 
   .content {
     left: 0;
     max-width: 100vw;
-    padding-top: 20px;
+    padding-top: calc(var(--navbar-height) + 12px);
     position: static;
     transition: transform 250ms ease;
   }

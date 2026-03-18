@@ -1,6 +1,4 @@
-# Appendices
-
-## Crystal Types Reference
+# Crystal Types Reference
 
 The following crystals are built into SPDCalc with validated Sellmeier equations.
 

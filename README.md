@@ -11,13 +11,6 @@ SPDCalc is a comprehensive tool for calculating optical properties of spontaneou
 
 This documentation covers the SPDCalc web interface, the most common way to use SPDCalc. The calculation engine is written in Rust with Python bindings also available.
 
-### What You'll Find Here
-
-* **Introduction** - Overview of SPDCalc and how to report bugs
-* **Getting Started** - Quick start guide for new users
-* **User Guides** - Comprehensive guides for all features
-* **Reference** - Detailed technical reference for panels and parameters
-
 ## Technology
 
 The SPDCalc web UI is built with Vue 2 and uses a Rust/WebAssembly backend for high-performance calculations. Multi-threaded computation via Web Workers enables fast calculations on modern multi-core CPUs.
