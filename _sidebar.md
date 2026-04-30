@@ -10,9 +10,11 @@
   - [Working with Calculation Panels](guides/working-with-panels.md)
   - [Saving, Sharing, and Importing](guides/saving-sharing-and-importing.md)
   - [Working with Results](guides/working-with-results.md)
+  - [Apodized Poling Domains](guides/poling-domains.md)
 
 - **Reference**
-  - [Crystal Types](reference/crystal-types.md)
+  - [Built-in Crystals](reference/crystal-types.md)
+  - [Custom Crystals](reference/custom-crystals.md)
 
 - **Links**
   - [SPDCalc Web App](https://app.spdcalc.org)
