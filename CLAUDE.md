@@ -8,6 +8,10 @@ Docsify documentation itself is rendered by docsify. Fetch the following referen
 
 Treat it like an llms.txt.
 
+## CI
+
+Pushes to main will automatically deploy to production. Pull requests and other branches will get a preview deployment.
+
 ## Dev preview options
 
 ```bash
